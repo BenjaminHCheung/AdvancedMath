@@ -1,7 +1,5 @@
 #include "quadraticfunctions.h"
 
-#include <iostream>
-
 std::vector<Complex> solve_quadratic_equation(double a, double b, double c)
 {
     std::vector<Complex> solutionVector;
@@ -25,9 +23,6 @@ std::vector<Complex> solve_quadratic_equation(double a, double b, double c)
     solutionVector.push_back(firstComplexNumber);
     Complex secondComplexNumber(realPart - plusMinusPart, -imaginaryPart);
     solutionVector.push_back(secondComplexNumber);
-
-    std::cout << firstComplexNumber.build_output_string() << std::endl;
-    std::cout << secondComplexNumber.build_output_string() << std::endl;
 
     return solutionVector;
 }
