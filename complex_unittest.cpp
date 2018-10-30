@@ -33,3 +33,13 @@ TEST(GivenADefinedObjectOfClassComplexWithArbitraryValuesForTheRealAndImaginaryP
     std::string calculatedConjugate{conjugateOfTestComplex.build_output_string()};
     EXPECT_TRUE(expectedConjugate == calculatedConjugate);
 }
+
+TEST(GivenTwoArbitraryComplexNumbers, WhenUsingTheAdditionOperator_TheOperationReturnsTheCorrectComplexNumber)
+{
+    Complex testComplexObjectOne(98.257, -63.98326);
+    Complex testComplexObjectTwo(-896.6324, -96.871234);
+    Complex newComplexObject{testComplexObjectOne + testComplexObjectTwo};
+    std::string calculatedComplexObject{newComplexObject.build_output_string()};
+    std::string expectedComplexObject{"-798.375400 - i160.854494"};
+    EXPECT_TRUE(expectedComplexObject == calculatedComplexObject);
+}
