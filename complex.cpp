@@ -11,14 +11,22 @@ Complex::Complex(double realInput, double imaginaryInput)
 
 void Complex::print()
 {
-
+    std::string outputString{build_output_string()};
+    std::cout << outputString << std::endl;
 }
 
 std::string Complex::build_output_string()
 {
     std::string outputString{""};
     outputString += std::to_string(mRealValue);
-    outputString += " + i";
-    outputString += std::to_string(mImaginaryValue);
+    if(std::copysign(1.0, mImaginaryValue) == -1.0)
+    {
+        outputString += " - i";
+    }
+    else
+    {
+        outputString += " + i";
+    }
+    outputString += std::to_string(abs(mImaginaryValue));
     return outputString;
 }
