@@ -59,7 +59,10 @@ Complex Complex::conjugate()
 }
 
 
-Complex operator+(Complex rightHandObject)
+Complex Complex::operator+(Complex rightHandObject)
 {
-
+    double newRealValue{mRealValue + rightHandObject.get_real_value()};
+    double newImaginaryValue{mImaginaryValue + rightHandObject.get_imaginary_value()};
+    Complex newComplexNumber(newRealValue, newImaginaryValue);
+    return newComplexNumber;
 }
