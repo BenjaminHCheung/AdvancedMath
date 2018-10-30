@@ -20,6 +20,5 @@ std::string Complex::build_output_string()
     outputString += std::to_string(mRealValue);
     outputString += " + i";
     outputString += std::to_string(mImaginaryValue);
-    std::cout << outputString << std::endl;
     return outputString;
 }
