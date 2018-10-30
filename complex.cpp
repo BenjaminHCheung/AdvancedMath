@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <math.h>
 
 Complex::Complex(double realInput, double imaginaryInput)
 {
@@ -33,5 +34,7 @@ std::string Complex::build_output_string()
 
 double Complex::modulus()
 {
-    return 0.0;
+    double modulus{sqrt(pow(mRealValue, 2.0)+pow(mImaginaryValue, 2.0))};
+    return modulus;
 }
+
