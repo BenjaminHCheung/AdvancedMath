@@ -34,13 +34,16 @@ std::string Complex::build_output_string()
 
 double Complex::modulus()
 {
-    double modulus{sqrt(pow(mRealValue, 2.0)+pow(mImaginaryValue, 2.0))};
+    double squared{2.0};
+    double modulus{sqrt(pow(mRealValue, squared)+pow(mImaginaryValue, squared))};
     return modulus;
 }
 
 
 Complex Complex::conjugate()
 {
-    Complex x(0, 0);
-    return x;
+    double inverter{-1.0};
+    double newImaginaryValue = mImaginaryValue * inverter;
+    Complex conjugateOfComplexNumber(mRealValue, newImaginaryValue);
+    return conjugateOfComplexNumber;
 }
