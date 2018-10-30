@@ -10,6 +10,8 @@ public:
 
     void print();
     std::string build_output_string();
+    double modulus();
+
 private:
     double mRealValue;
     double mImaginaryValue;

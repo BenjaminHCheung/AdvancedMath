@@ -30,3 +30,8 @@ std::string Complex::build_output_string()
     outputString += std::to_string(abs(mImaginaryValue));
     return outputString;
 }
+
+double Complex::modulus()
+{
+    return 0.0;
+}

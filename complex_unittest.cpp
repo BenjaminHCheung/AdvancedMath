@@ -16,3 +16,11 @@ TEST(GivenADefinedObjectOfClassComplexWithAllNegativeValues, WhenUsingTheBuildOu
     std::string expectedString{"-22.573000 - i453.283500"};
     EXPECT_TRUE(functionString == expectedString);
 }
+
+TEST(GivenADefinedObjectOfClassComplexWithArbitraryValuesForTheRealAndImaginaryParts, WhenCalculatingTheModulusUsingTheModulusFunction_ItReturnsTheCorrectValueForTheModulusInTheFormOfADouble)
+{
+    Complex testComplexObject(34.6765, -14.9987);
+    double expectedModulus{37.78122091648177};
+    double calculatedModulus{testComplexObject.modulus()};
+    EXPECT_DOUBLE_EQ(expectedModulus, calculatedModulus);
+}
