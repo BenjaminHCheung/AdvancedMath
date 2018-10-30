@@ -1,16 +1,34 @@
 #include "quadraticfunctions.h"
 
+#include <iostream>
+
 std::vector<Complex> solve_quadratic_equation(double a, double b, double c)
 {
     std::vector<Complex> solutionVector;
+    double imaginary{-1.0};
     double squared{2.0};
     double realPart{-b/(2*a)};
-    double quadraticPartPositve{sqrt(pow(b, squared) - (4.0 * a * c))/(2*a)};
-    double quadraticPartNegative{-sqrt(pow(b, squared) - (4.0 * a * c))/(2*a)};
-    Complex firstComplexNumber(realPart + quadraticPartPositve, 0.0);
+    double imaginaryPart{0.0};
+    double plusMinusPart{0.0};
+    double insideTheRoot{pow(b, squared) - (4.0 * a * c)};
+
+    if(copysign(1.0, insideTheRoot) == imaginary)
+    {
+        imaginaryPart = sqrt(abs(insideTheRoot))/(2 * a);
+    }
+    else
+    {
+        plusMinusPart = sqrt(abs(insideTheRoot))/(2 * a);
+    }
+
+    Complex firstComplexNumber(realPart + plusMinusPart, imaginaryPart);
     solutionVector.push_back(firstComplexNumber);
-    Complex secondComplexNumber(realPart + quadraticPartNegative, 0.0);
+    Complex secondComplexNumber(realPart - plusMinusPart, -imaginaryPart);
     solutionVector.push_back(secondComplexNumber);
+
+    std::cout << firstComplexNumber.build_output_string() << std::endl;
+    std::cout << secondComplexNumber.build_output_string() << std::endl;
+
     return solutionVector;
 }
 
