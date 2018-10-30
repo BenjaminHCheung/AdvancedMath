@@ -14,12 +14,15 @@ ENDIF()
 add_library(${PROJECT_NAME} STATIC
 	complex.h
 	complex.cpp
+        quadraticfunctions.h
+        quadraticfunctions.cpp
     	)
 
 set(TEST_NAME ${PROJECT_NAME}_UnitTest)
 
 add_executable(${TEST_NAME}
 	complex_unittest.cpp
+        quadratic_unittest.cpp
         )
 
 target_link_libraries(${TEST_NAME} gtest gtest_main ${PROJECT_NAME})

@@ -43,3 +43,4 @@ TEST(GivenTwoArbitraryComplexNumbers, WhenUsingTheAdditionOperator_TheOperationR
     std::string expectedComplexObject{"-798.375400 - i160.854494"};
     EXPECT_TRUE(expectedComplexObject == calculatedComplexObject);
 }
+
