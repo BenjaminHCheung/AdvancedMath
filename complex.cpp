@@ -38,3 +38,9 @@ double Complex::modulus()
     return modulus;
 }
 
+
+Complex Complex::conjugate()
+{
+    Complex x(0, 0);
+    return x;
+}

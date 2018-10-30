@@ -24,3 +24,12 @@ TEST(GivenADefinedObjectOfClassComplexWithArbitraryValuesForTheRealAndImaginaryP
     double calculatedModulus{testComplexObject.modulus()};
     EXPECT_DOUBLE_EQ(expectedModulus, calculatedModulus);
 }
+
+TEST(GivenADefinedObjectOfClassComplexWithArbitraryValuesForTheRealAndImaginaryParts, WhenCalculatingTheConjugateUsingTheConjugateFunction_ItReturnsTheCorrectValuesForTheConjugateInTheFormOfAComplexNumber)
+{
+    Complex testComplexObject(253.89364, -29.532870);
+    std::string expectedConjugate{"253.893640 + i29.532870"};
+    Complex conjugateOfTestComplex{testComplexObject.conjugate()};
+    std::string calculatedConjugate{conjugateOfTestComplex.build_output_string()};
+    EXPECT_TRUE(expectedConjugate == calculatedConjugate);
+}

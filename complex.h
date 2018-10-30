@@ -11,6 +11,7 @@ public:
     void print();
     std::string build_output_string();
     double modulus();
+    Complex conjugate();
 
 private:
     double mRealValue;
