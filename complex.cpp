@@ -10,6 +10,16 @@ Complex::Complex(double realInput, double imaginaryInput)
     mImaginaryValue = imaginaryInput;
 }
 
+
+double Complex::get_real_value()
+{
+    return mRealValue;
+}
+double Complex::get_imaginary_value()
+{
+    return mImaginaryValue;
+}
+
 void Complex::print()
 {
     std::string outputString{build_output_string()};
@@ -46,4 +56,10 @@ Complex Complex::conjugate()
     double newImaginaryValue = mImaginaryValue * inverter;
     Complex conjugateOfComplexNumber(mRealValue, newImaginaryValue);
     return conjugateOfComplexNumber;
+}
+
+
+Complex operator+(Complex rightHandObject)
+{
+
 }
